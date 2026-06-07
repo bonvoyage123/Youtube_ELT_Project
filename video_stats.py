@@ -18,15 +18,7 @@ def get_playlist_id():
         data = response.json()
 
         #Readable format for JSON
-        print(json.dumps(data, indent=4))
-        
-        if 'error' in data:
-            print(f"\nAPI Error: {data['error']['message']}")
-            return None
-        
-        if 'items' not in data:
-            print("Error: 'items' not found in response")
-            return None
+        #print(json.dumps(data, indent=4))
         
         channel_items = data['items'][0]
         channel_upload_id = channel_items['contentDetails']['relatedPlaylists']['uploads']
